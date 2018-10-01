@@ -25,6 +25,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+	'cloudinary config': 'cloudinary://api_key:api_secret@cloud_name',
 });
 
 // Load your project's Models
