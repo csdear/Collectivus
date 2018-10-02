@@ -5,6 +5,9 @@ require('dotenv').config();
 // Require keystone
 var keystone = require('keystone');
 
+const keys = require('./config/keys');
+
+
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
@@ -18,7 +21,7 @@ keystone.init({
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'pug',
-
+	'mongo': keys.mongoURI,
 	'emails': 'templates/emails',
 
 	'auto update': true,
