@@ -1,7 +1,3 @@
-// test database outside keystone
-
-console.log('testing');
-
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
 require('dotenv').config();
@@ -64,10 +60,13 @@ keystone.set('nav', {
 
 keystone.start();
 
+
+// var user = req.user;
+console.log(this.locals.user);
 // Create a couple of test items
 // keystone.createItems({
 //     Item: [
-//       { description: 'This is a test.', owner: 'some user' }
+//       { description: 'This is a test.', owner: user.id }
 //     ]
 // });
 // keystone.createItems({
