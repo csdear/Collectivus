@@ -28,7 +28,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
-	'cloudinary config': 'cloudinary://api_key:api_secret@cloud_name',
+	'cloudinary config': 'cloudinary://476213854153657:RtdSb4HNNYlI5_HHRuLbM_NMeZQ@dku8en6ny',
 });
 
 // Load your project's Models
@@ -54,6 +54,7 @@ keystone.set('nav', {
 	galleries: 'galleries',
 	enquiries: 'enquiries',
 	users: 'users',
+	items: 'items',
 });
 
 // Start Keystone to connect to your database and initialise the web server
