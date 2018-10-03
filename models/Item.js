@@ -7,7 +7,7 @@ var Types = keystone.Field.Types;
  */
 
 var Item = new keystone.List('Item', {
-    autokey: { from: 'description', path: 'key', unique: true },
+	autokey: { from: 'description', path: 'key', unique: true },
 });
 
 Item.add({
