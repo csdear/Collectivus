@@ -1,0 +1,10 @@
+extends ../layouts/default
+block content
+	.container
+		if items.length
+			each item in items
+				h2= item.description
+					if item.owner
+						.pull-right.text-muted= item._.owner
+		else
+			h3.text-muted There are no items yet.
