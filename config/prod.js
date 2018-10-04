@@ -1,4 +1,6 @@
 //dev.js, dont commit this.
 module.exports = {
-    mongoURI: 'mongodb://csdear:agotcha1@ds121373.mlab.com:21373/collectivus_dev'
+    mongoURI: process.env.MONGO_URI,
+    cookieSecret: process.env.COOKIE_SECRET,
+    cloudinaryUrl: process.env.CLOUDINARY_URL
 };
