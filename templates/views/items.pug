@@ -1,10 +1,15 @@
 extends ../layouts/default
+
+include ../mixins/item
+
+block intro
+	.container
+		h1= 'Items'
+
 block content
 	.container
 		if items.length
 			each item in items
-				h2= item.description
-					if item.owner
-						.pull-right.text-muted= item._.owner
+				+item(item)
 		else
 			h3.text-muted There are no items yet.
