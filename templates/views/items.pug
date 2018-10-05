@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 extends ../layouts/default
 block content
 	.container
@@ -8,3 +9,20 @@ block content
 						.pull-right.text-muted= item._.owner
 		else
 			h3.text-muted There are no items yet.
+=======
+extends ../layouts/default
+
+include ../mixins/item
+
+block intro
+	.container
+		h1= 'Items'
+	hr
+block content
+	.container
+		if items.length
+			each item in items
+				+item(item)
+		else
+			h3.text-muted There are no items yet.
+>>>>>>> ce0c6f9835dfcbfdc9f2a8bf6320cb735d417890
