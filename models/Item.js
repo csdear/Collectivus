@@ -1,22 +1,23 @@
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
-/**
- * Item Model
- * ==========
- */
-
+// var Item = new keystone.List('Item', {
+// 	map: { name: 'title' },
+// 	autokey: { from: 'title', path: 'key', unique: true },
+// });
 var Item = new keystone.List('Item', {
-	map: { description: 'description'},
-    autokey: { from: 'description', path: 'key', unique: true },
+	autokey: { from: 'key', path: 'key', unique: true, index: true },
+	// map: {name: 'name' },
 });
+
 
 Item.add({
-	description: { type: String, required: true, initial: false },
-	owner: { type: Types.Relationship, ref: 'User', index: true },
-	createdDate: { type: Types.Date, index: true, dependsOn: { state: 'created' } },
+	name: { type: String, required: true },
+	owner: { type: Types.Relationship, ref: 'User' },
+	createdAt: { type: Date, default: Date.now },
 	image: { type: Types.CloudinaryImage },
+	description: { type: Types.Html, wysiwyg: true, height: 400 }
 });
 
-Item.defaultColumns = 'id, description';
+Item.defaultColumns = 'name, owner|20%, createdAt|15%, image'
 Item.register();
