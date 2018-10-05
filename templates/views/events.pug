@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+include ../mixins/event
+
+block intro
+	.container
+		h1= 'Events'
+	hr
+block content
+	.container
+		if events.length
+			each event in events
+				+event(event)
+		else
+			h3.text-muted There are no events yet.

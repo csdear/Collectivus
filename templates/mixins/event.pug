@@ -1,0 +1,19 @@
+mixin event(event)
+	article(data-ks-editable=editable(user, { list: 'Event', id: event.id })).media
+		.media-left
+			a(href='/events/' + event.key)
+				if event.image.exists
+					img(src=event._.image.fit(80,80)).media-object
+				else
+					img(src="http://placehold.it/80x80").media-object
+		.media-body
+			h3.media-heading
+				a(href='/blog/event/' + event.key)= event.name
+			if event.publishedDate || event.author
+				p.text-muted.text-small
+					if event.publishedDate
+						time= event._.publishedDate.format('MMMM Do, YYYY')
+						|  
+					if event.author
+						span by #{event.author.name.full}
+			!= event.description

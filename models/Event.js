@@ -1,7 +1,10 @@
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
-var Event = new keystone.List('Event');
+var Event = new keystone.List('Event', {
+	autokey: { from: 'key', path: 'key', unique: true, index: true },
+	// map: {name: 'name' },
+});
 
 Event.add({
     name: { type: String, required: true, initial: true },
@@ -10,6 +13,8 @@ Event.add({
     endTime: { type: Types.Datetime, required: true, initial: true, index: true },
     location: { type: Types.Location, initial: true },
     published: { type: Boolean },
+    owner: { type: Types.Relationship, ref: 'User' },
+    image: { type: Types.CloudinaryImage },
     publishDate: { type: Types.Date, index: true }
   });
 
