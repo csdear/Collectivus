@@ -7,6 +7,7 @@ var Types = keystone.Field.Types;
  */
 
 var Item = new keystone.List('Item', {
+	map: { description: 'description'},
     autokey: { from: 'description', path: 'key', unique: true },
 });
 
@@ -17,4 +18,5 @@ Item.add({
 	image: { type: Types.CloudinaryImage },
 });
 
+Item.defaultColumns = 'id, description';
 Item.register();
