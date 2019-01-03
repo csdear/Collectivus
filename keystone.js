@@ -15,6 +15,7 @@ const keys = require('./config/keys');
 keystone.init({
 	'name': 'collectivus',
 	'brand': 'collectivus',
+	'port': '8083',
 
 	'sass': 'public',
 	'static': 'public',
